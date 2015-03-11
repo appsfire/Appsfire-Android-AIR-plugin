@@ -32,11 +32,29 @@ package appsfiredemo
 			NativeApplication.nativeApplication.addEventListener(Event.ACTIVATE, resumeEventHandler);			
 		}
 		
-		static public function buttonEventHandler(e:Event):void {
+		static public function onSushiButtonClicked(e:Event):void {
 			try {				
 				if (appsfire.afadsdk_isThereAModalAdAvailable("AFAdSDKModalTypeSushi")) {
 					// Show interstitial
 					appsfire.afadsdk_requestModalAd("AFAdSDKModalTypeSushi");
+				}
+				else {
+					// Show toast to say the interstitial is still loading
+					var aWait : Alert = new Alert();
+					aWait.showAlert("The interstitial is still loading");
+				}
+			} catch (e:Error) {
+				// Show toast with error
+				var aErr : Alert = new Alert();
+				aErr.showAlert("Error: " + e.toString());				
+			}
+		}
+		
+		static public function onUraMakiButtonClicked(e:Event):void {
+			try {				
+				if (appsfire.afadsdk_isThereAModalAdAvailable("AFAdSDKModalTypeUraMaki")) {
+					// Show interstitial
+					appsfire.afadsdk_requestModalAd("AFAdSDKModalTypeUraMaki");
 				}
 				else {
 					// Show toast to say the interstitial is still loading

@@ -13,7 +13,7 @@
 			<s:SkinnablePopUpContainer x="70" y="300">
 				<s:TitleWindow title="Not available yet" close="close()">
 					<s:VGroup horizontalAlign="center" paddingTop="8" paddingBottom="8" paddingLeft="8" paddingRight="8" gap="5" width="100%">
-						<s:Label text="The Sushi interstitial is still loading."/>
+						<s:Label text="The interstitial is still loading."/>
 						<s:Button label="OK" click="close()"/>
 					</s:VGroup>
 				</s:TitleWindow>
@@ -23,6 +23,7 @@
 	
 	<s:VGroup width="100%" height="100%" verticalAlign="middle" horizontalAlign="center">  
 		<s:Label text="Powered by Appsfire" fontSize="24"  color="0xff0000" />
-		<s:Button label="Show Sushi Interstitial" fontSize="24" click="appsfiredemo.MyClass.buttonEventHandler(event)" styleName="next"/>   
+		<s:Button label="Show Sushi Interstitial" fontSize="24" click="appsfiredemo.MyClass.onSushiButtonClicked(event)" styleName="next"/>   
+		<s:Button label="Show Ura Maki Interstitial" fontSize="24" click="appsfiredemo.MyClass.onUraMakiButtonClicked(event)" styleName="next"/>   
 	</s:VGroup>
 </s:Application>
